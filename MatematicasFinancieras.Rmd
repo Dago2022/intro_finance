@@ -1,0 +1,88 @@
+---
+title: "Untitled"
+author: "José Fernando Zea"
+date: "26/3/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+El incremento de dinero que se espera recibir tras realizar un prestamo se denomina el interés.
+
+$$
+I = F - P
+$$
+
+Para ejemplificarlo si a una persona presta a un amigo 1 millón de pesos espera recibir después de un tiempo ese millón y un dinero adicional que se denomina el interés que es una compesación que recibe la persona que presta el dinero, supongamos que la persona recibe al año 1 millón 500.
+
+```{r}
+I = 1200000 - 1000000
+print(I)
+```
+
+Es poco común cuantificar en valores absolutos el dinero que se espera recibir el prestamista, es más común recibir este valor en cambio porcentual a través de lo que se conoce como tasa de interés:
+
+$$
+i =  \frac{I}{P}=\frac{F - P}{P}
+$$
+
+La tasa de interés se expresa en una unidad de tiempo, por ejemplo la tasa de interés anual pactada en el prestamo anterior es de:
+
+$$
+i = \frac{200000}{1000000} = 0.2
+$$
+
+# Tasa de interés simple
+
+uando el interés a pagar se incrementa proporcionalmente con el tiempo hablamos de interés simple. Para motivar el interés compuesto suponga que un amigo le preste a
+
+Por ejemplo si se presta un dinero a tres meses el interés a pagar es del 1% del valor prestado cada mes el amigo deberá pagar cada mes 10 mil de interéses. En el mes dos también deberá pagar 10 mil pesos, y el tercer mes también deberá pagar 10 mil pesos.
+
+El primer mes el interés en términos asbsolutos (I = Pi), el segundo mes también es (I = Pi) y el tercer mes el interés también es I = Pi, en otras palabras al finalizar los tres meses deberá pagar de interés nPi
+
+$$
+I = nPi
+$$
+
+Además de pagar los interés también se deberá pagar capital:
+
+$$F = P + nPi = P(1+ni)$$
+
++------------+-------------------------------------------+------------+-----------------------------+
+| Período    | Capital para calculo intereses de interes | Interés    | Capital a pagar             |
++============+===========================================+============+=============================+
+| 0 a 1      | P                                         | Pi         | P+Pi                        |
++------------+-------------------------------------------+------------+-----------------------------+
+| 1-2        | P                                         | Pi         | P+PI + Pi = P+2Pi = P(1+2i) |
++------------+-------------------------------------------+------------+-----------------------------+
+| 2 a 3      | P                                         | Pi         | P(1+2i) + Pi = P (1+3i)     |
++------------+-------------------------------------------+------------+-----------------------------+
+| $\vdots$   | $\vdots$                                  | $\vdots$   | $\vdots$                    |
++------------+-------------------------------------------+------------+-----------------------------+
+| n--1 a n   | P                                         | Pi         | P(1+ni)                     |
++------------+-------------------------------------------+------------+-----------------------------+
+
+: Interés Simple
+
+# Interés compuesto
+
++------------+-------------------------------------------+--------------------------+----------------------+
+| Período    | Capital para calculo intereses de interes | Interés                  | Capital a pagar      |
++============+===========================================+==========================+======================+
+| 0 a 1      | P                                         | Pi                       | P+Pi=P(1+i)          |
++------------+-------------------------------------------+--------------------------+----------------------+
+| 1-2        | P(1+i)                                    | P(1+i)i                  | $P(1+i) + P(1+i)i$   |
+|            |                                           |                          |                      |
+|            |                                           |                          | $=P(1+i)^2$          |
++------------+-------------------------------------------+--------------------------+----------------------+
+| 2 a 3      | $P(1+i)^2$                                | $P(1+i)^2i$              | $P(1+i)^2+P(1+i)^2i$ |
+|            |                                           |                          | $=P(1+i)^3$          |
++------------+-------------------------------------------+--------------------------+----------------------+
+| $\vdots$   | $\vdots$                                  | $\vdots$                 | $\vdots$             |
++------------+-------------------------------------------+--------------------------+----------------------+
+| n--1 a n   | $P(1+i)^{(n-1)}$                          | $P(1+i)^{(n-1)}\times i$ | $P(1+i)^n$           |
++------------+-------------------------------------------+--------------------------+----------------------+
+
+: Interés Simple
