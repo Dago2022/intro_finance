@@ -86,3 +86,39 @@ $$F = P + nPi = P(1+ni)$$
 +------------+-------------------------------------------+--------------------------+----------------------+
 
 : Interés Simple
+
+Expresiones interés simple
+
+$$
+F = P(1+ni)
+$$
+
+$$
+P = \frac{F}{1+ni}
+$$
+
+$$
+i = \frac{F-P}{n\times P}=\frac{I}{n\times P}
+$$
+
+$$
+n = \frac{F-P}{Pi}
+$$
+
+# Interés compuesto
+
+$$
+F = P(1+i)^n
+$$
+
+$$
+P = \frac{F}{(1+i)^n}
+$$
+
+$$
+i = \left(\frac{F}{P}\right)^{1/n}-1
+$$
+
+$$
+n = \frac{log(F/P)}{log(1+i)}
+$$
